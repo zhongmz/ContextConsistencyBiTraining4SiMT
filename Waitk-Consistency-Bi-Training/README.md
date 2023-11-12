@@ -9,12 +9,12 @@
 
 **Installing Fairseq**
 ```bash
-cd Waitk-Consistency-Bi
+cd Waitk-Consistency-Bi-Training
 pip install --editable .
 ```
 
 # Training
-Train wait-k using context-consistency-bi with the following command:
+Train wait-k model using context-consistency-bi with the following command:
 ```bash
 CUDA_VISIBLE_DEVICES=$gpu python $code_dir/train.py $data_bin -s $SRC -t $TGT --left-pad-source False \
     --user-dir $code_dir/examples/waitk --arch $arch --save-dir $MODEL  \
@@ -30,7 +30,7 @@ CUDA_VISIBLE_DEVICES=$gpu python $code_dir/train.py $data_bin -s $SRC -t $TGT --
     --mrt-seq-max-len-a 1.5 --mrt-seq-max-len-b 5 \
     --mrt-temperature $temperature \
     --mrt-greedy false \
-    --mrt-alpha $alpha > $log_file 
+    --mrt-alpha $alpha 
 ```
 
 # Testing
